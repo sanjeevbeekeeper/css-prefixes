@@ -1,0 +1,31 @@
+// box shadow
+// box-shadow: 3px 3px 3px white;
+@mixin boxshadow($h, $v, $b, $c) {
+  -webkit-box-shadow: $h $v $b $c; // Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+
+     -moz-box-shadow: $h $v $b $c; // Firefox 3.5 - 3.6
+          box-shadow: $h $v $b $c; // Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS
+    }
+
+// transform property
+// transform: translate(0px, 0px);
+@mixin transform-translate($x, $y) {
+    -webkit-transform: translate($x, $y);
+       -moz-transform: translate($x, $y);
+        -ms-transform: translate($x, $y);
+         -o-transform: translate($x, $y);
+            transform: translate($x, $y);
+    }
+
+// opacity property
+// opacity: 0.5px;
+@mixin opacity ($mb, $ob) {
+    // Theoretically for IE 8 & 9 (more valid)
+    // ...but not required as filter works too
+    // should come BEFORE filter
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=#{$ob})"; // IE8
+    // This works in IE 8 & 9 too
+    // ... but also 5, 6, 7
+    filter: alpha(opacity=$ob); // IE 5-7
+    // Modern Browsers
+    opacity: $mb;
+    }
