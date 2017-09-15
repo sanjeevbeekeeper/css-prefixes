@@ -18,6 +18,7 @@
 
 // opacity property
 // opacity: 0.5px;
+// Thanks for css-tricks
 @mixin opacity ($mb, $ob) {
     // Theoretically for IE 8 & 9 (more valid)
     // ...but not required as filter works too
